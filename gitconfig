@@ -12,8 +12,12 @@
   brs = branches
   ci = commit -v
   co = checkout
+  graph = log --graph --all --oneline --decorate
+  gr = graph
   pf = push --force-with-lease
   st = status
+  undo = reset --soft HEAD~1
+  undo-hard = reset --hard HEAD~1
 [core]
   excludesfile = ~/.gitignore
   autocrlf = input
