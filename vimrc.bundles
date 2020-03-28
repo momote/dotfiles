@@ -32,6 +32,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'vim-scripts/tComment'
+Plug 'easymotion/vim-easymotion'
 
 if g:has_async
   Plug 'dense-analysis/ale'
