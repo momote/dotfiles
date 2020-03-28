@@ -100,14 +100,6 @@ if executable('ag')
   endif
 endif
 
-" Make it obvious where 80 characters is
-set textwidth=80
-set colorcolumn=+1
-
-" Numbers
-set number
-set numberwidth=5
-
 " Tab completion
 " will insert tab at beginning of line,
 " will use completion if not at beginning
@@ -171,9 +163,6 @@ set spellfile=$HOME/.vim-spell-en.utf-8.add
 
 " Autocomplete with dictionary words when spell check is on
 set complete+=kspell
-
-" Always use vertical diffs
-set diffopt+=vertical
 
 " Local config
 if filereadable($HOME . "/.vimrc.local")
