@@ -1,0 +1,10 @@
+#!/usr/bin/env zsh
+
+export ZPLUG_HOME=~/.zplug
+
+curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
+
+source $ZPLUG_HOME/init.zsh
+source $HOME/.zshrc.bundles
+zplug install
+zplug load --verbose
