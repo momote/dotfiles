@@ -1,6 +1,6 @@
 DOTPATH    := $(realpath $(dir $(lastword $(MAKEFILE_LIST))))
-CANDIDATES := $(wildcard _??*)
-EXCLUSIONS := _bin
+CANDIDATES := $(wildcard *)
+EXCLUSIONS := Makefile README.md LICENSE scripts
 DOTFILES   := $(filter-out $(EXCLUSIONS), $(CANDIDATES))
 
 .DEFAULT_GOAL := help
@@ -16,11 +16,11 @@ list: ## Show dot files in this repo
 	@$(foreach val, $(DOTFILES), /bin/ls -dF $(val);)
 
 check: ## Check if symlink to home directory exists
-	@$(foreach val, $(DOTFILES), /bin/ls -dF $(HOME)/$(patsubst _%,.%,$(val));)
+	@$(foreach val, $(DOTFILES), /bin/ls -dF $(HOME)/.$(val);)
 
 install: ## Create symlink to home directory
 	@echo 'Deploy dot files to home directory...'
-	@$(foreach val, $(DOTFILES), ln -sfnv $(abspath $(val)) $(HOME)/$(patsubst _%,.%,$(val));)
+	@$(foreach val, $(DOTFILES), ln -sfnv $(abspath $(val)) $(HOME)/.$(val);)
 
 install-plugs:
 	./scripts/install-vim-plug
@@ -28,4 +28,4 @@ install-plugs:
 
 clean: ## Unlink the dot files and this repo
 	@echo 'Unlink dot files in your home directory...'
-	@$(foreach val, $(DOTFILES), /bin/rm -v $(HOME)/$(patsubst _%,.%,$(val));)
+	@$(foreach val, $(DOTFILES), /bin/rm -v $(HOME)/.$(val);)
