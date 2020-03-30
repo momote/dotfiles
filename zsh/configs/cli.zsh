@@ -1,3 +1,13 @@
+# History
+setopt hist_ignore_all_dups inc_append_history
+HISTFILE=~/.zhistory
+HISTSIZE=4096
+SAVEHIST=4096
+
+export ERL_AFLAGS="-kernel shell_history enabled"
+
+export WORDCHARS="*?_-.[]~=&;!#$%^(){}<>"
+
 # give us access to ^Q
 stty -ixon
 stty stop undef
@@ -18,3 +28,15 @@ bindkey "^Y" accept-and-hold
 bindkey "^N" insert-last-word
 bindkey "^Q" push-line-or-edit
 bindkey -s "^T" "^[Isudo ^[A" # "t" for "toughguy"
+
+## Color
+# makes color constants available
+autoload -U colors
+colors
+
+# enable colored output from ls, etc. on FreeBSD-based systems
+export CLICOLOR=1
+
+# Editor
+export VISUAL=vim
+export EDITOR=$VISUAL
