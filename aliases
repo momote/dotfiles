@@ -4,7 +4,9 @@ alias ln="ln -v"
 alias mkdir="mkdir -p"
 alias e="$EDITOR"
 alias v="$VISUAL"
+alias d="dirs -v"
 alias relogin='exec $SHELL -l'
+for index ({1..9}) alias "$index"="cd +${index}"; unset index
 
 # Pretty print the path
 alias path='echo $PATH | tr -s ":" "\n"'
