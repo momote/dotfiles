@@ -1,4 +1,5 @@
 # Unix
+#alias ls="ls --color=auto"
 alias l="ls"
 alias ll="ls -al"
 alias ln="ln -v"
@@ -8,6 +9,9 @@ alias v="$VISUAL"
 alias d="dirs -v"
 alias relogin='exec $SHELL -l'
 for index ({1..9}) alias "$index"="cd +${index}"; unset index
+
+# tmux
+alias tmuxi="tmuxinator"
 
 # Pretty print the path
 alias path='echo $PATH | tr -s ":" "\n"'
